@@ -48,21 +48,46 @@ Unlike generic mock interview tools that give vague feedback, SmartPrep AI:
 ---
 
 ## 🏗️ Architecture
-┌─────────────────────────────────────────────────────────────────┐
-│ SmartPrep AI Pipeline │
-├─────────────────────────────────────────────────────────────────┤
-│ │
-│ INPUT GENERATE RESPOND EVALUATE │
-│ ┌──────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ │
-│ │Topic │ ──▶ │ Gemini │ ──▶ │ Text / │ ─▶ │ Smart │ │
-│ │ + │ │ crafts │ │ Voice │ │ JSON │ │
-│ │Diff │ │ 2 Qs │ │ Answer │ │ Verdict │ │
-│ └──────┘ └──────────┘ └──────────┘ └──────────┘ │
-│ │ │
-│ ▼ │
-│ ┌──────────┐ │
-│ │ ADAPT │ │
-│ │ Level + │ │
-│ │Resources │ │
-│ └──────────┘ │
-└─────────────────────────────────────────────────────────────────┘
+Here are two copyable versions of the **SmartPrep AI Pipeline Flowchart**:
+
+---
+
+)
+
+```mermaid
+flowchart TD
+    subgraph Step1["1. INPUT"]
+        A["User Input: Topic + Difficulty Level"]
+    end
+
+    subgraph Step2["2. GENERATE"]
+        B["Gemini AI Crafts 2 Targeted Questions"]
+    end
+
+    subgraph Step3["3. RESPOND"]
+        C{"User Answer"}
+        C1["Text Answer"]
+        C2["Voice Answer (Audio to Text)"]
+    end
+
+    subgraph Step4["4. EVALUATE"]
+        D["Smart JSON Verdict\n(Score, Strengths, Knowledge Gaps)"]
+    end
+
+    subgraph Step5["5. ADAPT"]
+        E["Adaptive Engine\n(Adjust Difficulty Level + Recommend Resources)"]
+    end
+
+    %% Pipeline Flow
+    A --> B
+    B --> C
+    C -->|Text| C1
+    C -->|Audio| C2
+    C1 --> D
+    C2 --> D
+    D --> E
+    E -->|Feedback Loop to Next Round| A
+```
+
+---
+
