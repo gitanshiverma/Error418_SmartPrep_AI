@@ -48,11 +48,7 @@ Unlike generic mock interview tools that give vague feedback, SmartPrep AI:
 ---
 
 ## 🏗️ Architecture
-Here are two copyable versions of the **SmartPrep AI Pipeline Flowchart**:
 
----
-
-)
 
 ```mermaid
 flowchart TD
